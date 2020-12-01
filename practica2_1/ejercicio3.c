@@ -15,7 +15,10 @@ int main(){
 
 	/*puedes comentar la parte de arriba y descomentar la linea de abajo pero para poder
 	ejecutar el comando "errno -l" necesitas el paquete moreutils*/
-	//system("errno -l");
+	/*if (system("errno -l") == -1){
+	
+		perror("Hubo un problema ejecutando el comando system()")
+	}*/
 		
 	return 0;
 }
