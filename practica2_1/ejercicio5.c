@@ -16,7 +16,7 @@ int main(){
 	}
 	else{
 	
-		printf("Sistema operativo: %s.\nNodo: %s.\nFecha de lanzamiento: %s.\nVersión: %s.\nIdentificador hardware: %s.\n", aux->sysname, aux->nodename, aux->release, aux->version, aux->machine);
+		printf("-Sistema operativo: %s.\n-Nodo: %s.\n-Fecha de lanzamiento: %s.\n-Versión: %s.\n-Identificador hardware: %s.\n", aux->sysname, aux->nodename, aux->release, aux->version, aux->machine);
 		
 	}
 
