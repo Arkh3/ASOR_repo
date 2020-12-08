@@ -1,0 +1,5 @@
+Para otorogar los permisos "rw-r--r-x" a un fichero de dos formas
+distintasse haría:
+
+(1) chmod 641 fichero
+(2) chmod u+rw-x,g+r-wx,o+rx-w fichero
