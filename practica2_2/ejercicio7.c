@@ -18,7 +18,7 @@ int main (int argc, char *argv[]){
 	
 	if(argc == 1){
 	
-		printf("Usage: ./ejercicio5.c <filename>\n");
+		printf("Usage: ./ejercicio7.c <filename>\n");
 		return -1;
 	}
 	
