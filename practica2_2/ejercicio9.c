@@ -41,14 +41,14 @@ int main(int argc, char *argv[]){
 	
 	char *fileType;
 	fileType = malloc(sizeof(char)*50);
-	
-   	if (file_data.st_mode & S_IFMT == S_IFREG)
+
+   	if ((file_data.st_mode & S_IFMT) == S_IFREG)
    		fileType = "fichero ordinario";
    		
-   	else if (file_data.st_mode & S_IFMT == S_IFLNK)
+   	else if ((file_data.st_mode & S_IFMT) == S_IFLNK)
    		fileType = "enlace simbolico";
    	
-   	else if (file_data.st_mode & S_IFMT == S_IFDIR)
+   	else if ((file_data.st_mode & S_IFMT) == S_IFDIR)
    		fileType = "directorio";
    		
    	else

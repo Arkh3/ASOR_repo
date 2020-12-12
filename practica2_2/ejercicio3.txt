@@ -1,3 +1,11 @@
+Andrés Teruel Fernández
+
+Los permisos se pueden otorgar de forma selectiva usando la notación octal o la simbólica. Ejemplo, probar las siguientes órdenes (equivalentes):
+-chmod 540 fichero
+-chmod u+rx,g+r-wx,o-wxr fichero
+¿Cómo se podrían fijar los permisos rw-r--r-x, de las dos formas?
+
+
 Para otorogar los permisos "rw-r--r-x" a un fichero de dos formas
 distintasse haría:
 
