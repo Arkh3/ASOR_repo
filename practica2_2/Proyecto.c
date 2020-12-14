@@ -62,28 +62,35 @@ int main(int argc, char *argv[]){
 			return -1;
 		}
 		
-		switch(entrada->d_type){
+		if((S_IXUSR & stats.st_mode || S_IXGRP & stats.st_mode || S_IXOTH & stats.st_mode) && (entrada->d_type != DT_DIR)){
 		
-		case DT_REG:
-		printf("%s\n", entrada->d_name);
-		tamFiles += stats.st_size/1000; break;
-		
-		case DT_DIR:
-		printf("%s/\n", entrada->d_name); break;
-		
-		case DT_LNK:
-		
-		if(readlink(path, nombre_l, stats.st_size + 1) == -1){
-		
-			perror("Error a la llamada a readlink");
-			return -1;
+			printf("%s*\n", entrada->d_name);
+			tamFiles += stats.st_size/1000;
 		}
+		else{
 		
-		printf("%s -> %s\n", entrada->d_name, nombre_l);
-		
-		tamFiles += stats.st_size/1000; break;
+			switch(entrada->d_type){
+			
+			case DT_REG:
+			printf("%s\n", entrada->d_name);
+			tamFiles += stats.st_size/1000; break;
+			
+			case DT_DIR:
+			printf("%s/\n", entrada->d_name); break;
+			
+			case DT_LNK:
+			
+			if(readlink(path, nombre_l, stats.st_size + 1) == -1){
+			
+				perror("Error a la llamada a readlink");
+				return -1;
+			}
+			
+			printf("%s -> %s\n", entrada->d_name, nombre_l);
+			
+			tamFiles += stats.st_size/1000; break; 
+			}
 		}
-		
 		entrada = readdir(d);
 	}
 	
