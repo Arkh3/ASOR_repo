@@ -1,1 +1,1 @@
-# asor_repo
+Prácticas de Ampliación de Sistemas Operativos y Redes
